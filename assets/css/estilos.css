@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ==========================================================================
+   ZENTEK PREMIUM CSS - EXPERIENCIA FLUIDA Y MODERNA
+   ========================================================================== */
+
+/* --- 1. RESET Y VARIABLES GLOBALES --- */
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary: #0f172a;
+    --accent: #10b981;
+    --accent-hover: #059669;
+    --danger: #ef4444;
+    --danger-hover: #dc2626;
+    
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+
+    --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+    --shadow-md: 0 10px 25px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.12);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html { scroll-behavior: smooth; }
+
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+main { flex: 1; }
+
+/* --- 2. NAVEGACIÓN PRINCIPAL --- */
+.nav-auth {
+    background-color: var(--secondary);
+    padding: 10px 40px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 3px solid var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    box-shadow: var(--shadow-sm);
+}
+.nav-auth a { color: #ffffff; text-decoration: none; font-size: 1.5em; font-weight: 800; letter-spacing: 1px; }
+
+.navbar {
+    background-color: var(--secondary);
+    padding: 15px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+}
+.nav-brand { flex: 0 0 auto; }
+.nav-brand a { color: white; font-size: 1.8em; font-weight: 800; text-decoration: none; letter-spacing: 2px; }
+
+.nav-search-container { flex: 1 1 auto; display: flex; justify-content: center; margin: 0 40px; order: 2; }
+.search-form { display: flex; width: 100%; max-width: 600px; background: #ffffff; border-radius: 50px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); transition: var(--transition-smooth); }
+.search-form:focus-within { box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3); transform: translateY(-1px); border-color: var(--primary); }
+.search-form input { flex-grow: 1; padding: 14px 25px; border: none; outline: none; font-size: 1.05em; color: var(--text-main); background: transparent; }
+.search-form button { background: var(--primary); color: white; border: none; padding: 0 28px; cursor: pointer; font-size: 1.1em; transition: var(--transition-smooth); }
+.search-form button:hover { background: var(--primary-hover); padding-left: 32px; padding-right: 24px; }
+
+.nav-menu { flex: 0 0 auto; display: flex; align-items: center; order: 3; }
+.nav-icons { display: flex; align-items: center; gap: 30px; }
+.nav-icons a { color: #f1f5f9; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: var(--transition-smooth); }
+.nav-icons a:hover { color: #60a5fa; }
+.cart-icon { position: relative; font-size: 1.2em; }
+.badge-carrito { position: absolute; top: -8px; right: -12px; background: var(--danger); color: white; font-size: 0.65em; padding: 3px 6px; border-radius: 50%; font-weight: bold; border: 2px solid var(--secondary); }
+.btn-registro { background: white; color: var(--secondary) !important; padding: 10px 24px !important; border-radius: 30px !important; font-weight: 700 !important; }
+.btn-registro:hover { background: #e2e8f0; transform: translateY(-2px); }
+.btn-admin { background: var(--primary) !important; border: 1px solid #60a5fa !important; padding: 10px 20px !important; border-radius: 30px !important; color: white !important; }
+.menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.8em; cursor: pointer; order: 4; }
+
+/* --- ESTILOS PARA EL LOGOTIPO --- */
+.logo-navbar {
+    height: 45px; 
+    width: auto; 
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo-navbar:hover {
+    transform: scale(1.05); 
+}
+
+.logo-footer {
+    height: 80px;  
+    width: auto;
+    display: block;
+    margin-bottom: 20px;
+    filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.3)); 
+}
+
+/* --- 3. HERO BANNER --- */
+.hero-section { background: url('../img/imagen_fondo.jpeg') center/cover no-repeat; color: white; text-align: center; padding: 120px 20px; display: flex; align-items: center; justify-content: center; min-height: 55vh; }
+.hero-content { max-width: 900px; animation: fadeInUp 0.8s ease-out; }
+.hero-content h1 { font-size: clamp(2.5em, 6vw, 4.5em); margin-bottom: 25px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; }
+.hero-content p { font-size: 1.25em; color: #cbd5e1; margin: 0 auto 40px; max-width: 650px; line-height: 1.6; }
+.btn-hero { display: inline-block; background: var(--primary); color: white; padding: 18px 45px; border-radius: 30px; text-decoration: none; font-size: 1.15em; font-weight: 700; transition: var(--transition-smooth); box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); }
+.btn-hero:hover { transform: translateY(-4px); box-shadow: 0 15px 25px rgba(37, 99, 235, 0.5); background: var(--primary-hover); }
+
+/* --- 4. BARRA DE CATEGORÍAS --- */
+.filtros { background: var(--bg-card); padding: 25px 20px; text-align: center; border-bottom: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
+.filtros a { text-decoration: none; padding: 10px 28px; border-radius: 30px; margin: 5px; background: var(--bg-main); color: var(--text-muted); font-weight: 600; transition: var(--transition-smooth); display: inline-block; border: 1px solid transparent; }
+.filtros a:hover, .filtros a.activo { background: var(--primary); color: #ffffff; border-color: var(--primary); box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2); }
+
+/* --- 5. CUADRÍCULA DE PRODUCTOS Y BLOG --- */
+.contenedor-catalogo, .contenedor-blog-grid { max-width: 1600px; margin: 60px auto; padding: 0 40px; }
+.titulo-seccion { text-align: center; color: var(--secondary); font-size: 2.8em; margin-bottom: 60px; font-weight: 800; letter-spacing: -1px; }
+.grid-productos, .grid-4-columnas { display: grid; gap: 30px; grid-template-columns: 1fr; }
+@media (min-width: 650px) { .grid-productos, .grid-4-columnas { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 950px) { .grid-productos, .grid-4-columnas { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1300px) { .grid-productos, .grid-4-columnas { grid-template-columns: repeat(4, 1fr); } }
+
+.producto-card { background: var(--bg-card); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); transition: var(--transition-smooth); border: 1px solid var(--border-color); display: flex; flex-direction: column; height: 100%; }
+.producto-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+.img-container { width: 100%; height: 320px; overflow: hidden; position: relative; background: #fdfdfd; flex-shrink: 0; }
+.img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.producto-card:hover .img-container img { transform: scale(1.05); }
+.producto-info { padding: 30px; display: flex; flex-direction: column; flex-grow: 1; text-align: left; }
+.producto-info h3 { font-size: 1.4em; line-height: 1.4; margin-bottom: 12px; color: var(--secondary); font-weight: 800; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 2.8em; }
+.producto-info .precio { font-size: 1.8em; letter-spacing: -1px; font-weight: 800; color: var(--primary); margin-bottom: 25px; }
+.btn-comprar { margin-top: auto; width: 100%; padding: 16px; background: var(--secondary); color: white; border: none; border-radius: 14px; font-size: 1.1em; font-weight: 700; cursor: pointer; transition: var(--transition-smooth); display: flex; justify-content: center; align-items: center; gap: 10px; }
+.btn-comprar:hover { background: var(--primary); transform: scale(1.02); box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25); }
+
+/* --- 6. PÁGINAS DE LOGIN Y REGISTRO --- */
+.auth-wrapper { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+.auth-box { background: var(--bg-card); width: 100%; max-width: 450px; padding: 50px 40px; border-radius: 24px; box-shadow: var(--shadow-lg); text-align: center; }
+.auth-box h2 { color: var(--secondary); font-size: 2em; margin-bottom: 10px; font-weight: 800; }
+.auth-box p { color: var(--text-muted); margin-bottom: 35px; }
+.input-group label { display: block; margin-bottom: 10px; color: var(--secondary); font-weight: 700; font-size: 0.95em; text-align: left; }
+.input-group input, .input-group textarea, .input-group select { width: 100%; padding: 15px; border: 2px solid var(--border-color); border-radius: 12px; font-size: 1em; transition: var(--transition-smooth); background: var(--bg-main); }
+.input-group input:focus, .input-group textarea:focus { border-color: var(--primary); background: white; outline: none; box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1); }
+.btn-submit { width: 100%; padding: 16px; background: var(--primary); color: white; border: none; border-radius: 12px; font-size: 1.1em; font-weight: 700; cursor: pointer; transition: var(--transition-smooth); margin-top: 10px; }
+.btn-submit:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3); }
+
+/* --- 7. TABLAS GLOBALES --- */
+.admin-table, .tabla-admin, .tabla-carrito, .tabla-pedidos { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--bg-card); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); margin-top: 20px; }
+.admin-table th, .tabla-admin th, .tabla-carrito th, .tabla-pedidos th { background-color: var(--secondary); color: white; text-transform: uppercase; font-size: 0.85em; letter-spacing: 1px; padding: 20px; text-align: left; font-weight: 700; }
+.admin-table td, .tabla-admin td, .tabla-carrito td, .tabla-pedidos td { padding: 20px; border-bottom: 1px solid var(--border-color); vertical-align: middle; }
+.admin-table th:last-child, .admin-table td:last-child, .tabla-admin th:last-child, .tabla-admin td:last-child { text-align: center !important; }
+
+.btn-borrar, .btn-eliminar { background: var(--danger); color: white; padding: 10px 15px; border-radius: 8px; font-weight: 700; border: none; cursor: pointer; transition: 0.2s; text-decoration: none; display: inline-block; }
+.btn-borrar:hover { background: var(--danger-hover); }
+.btn-editar { background: var(--primary); color: white; padding: 10px 15px; border-radius: 8px; font-weight: 700; border: none; cursor: pointer; transition: 0.2s; margin-right: 5px; text-decoration: none; display: inline-block; }
+.btn-editar:hover { background: var(--primary-hover); }
+.btn-nuevo { background: var(--accent); color: white; padding: 12px 25px; border-radius: 10px; font-weight: 700; text-decoration: none; display: inline-block; margin-bottom: 25px; transition: 0.2s; }
+
+.btn-ascender { background: #4271b1; color: white; padding: 10px 15px; border-radius: 8px; font-weight: 700; border: none; cursor: pointer; transition: 0.2s; margin-right: 5px; text-decoration: none; display: inline-block; }
+.btn-ascender:hover { background: #3b649f; box-shadow: 0 4px 10px rgba(51, 60, 84, 0.2); }
+.btn-degradar { background: #e6982a; color: white; padding: 10px 15px; border-radius: 8px; font-weight: 700; border: none; cursor: pointer; transition: 0.2s; margin-right: 5px; text-decoration: none; display: inline-block; }
+.btn-degradar:hover { background: rgb(194, 96, 36); box-shadow: 0 4px 10px rgba(146, 64, 14, 0.2); }
+
+/* --- 10. BLOG LECTURA INDIVIDUAL --- */
+.contenedor-blog { max-width: 950px; margin: 60px auto; padding: 0 20px; }
+.post { background: white; border-radius: 24px; border: 1px solid var(--border-color); overflow: hidden; box-shadow: var(--shadow-lg); }
+.post-img { width: 100%; height: 450px; object-fit: cover; display: block; }
+.post-info { padding: 60px 80px; text-align: left; }
+.post-titulo { color: var(--secondary); margin: 0 0 20px 0; font-size: 3.2em; line-height: 1.15; font-weight: 800; letter-spacing: -1px; }
+.post-fecha { display: flex; align-items: center; gap: 25px; color: var(--text-muted); font-size: 0.95em; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid var(--border-color); }
+.post-fecha i { color: var(--primary); font-size: 1.2em; }
+.texto-articulo-blog, .post-contenido { color: #334155; line-height: 1.6; font-size: 1.5rem; white-space: normal; text-align: left; }
+.post-contenido p { margin-bottom: 20px; }
+
+/* --- 11. FOOTER --- */
+.footer-principal { background: var(--secondary); color: #f8f9fa; margin-top: auto; }
+.footer-container { max-width: 1400px; margin: 0 auto; padding: 80px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 50px; }
+.footer-section h2, .footer-section h3 { color: white; margin-bottom: 25px; font-weight: 700; font-size: 1.3em; }
+.footer-section p { color: #94a3b8; line-height: 1.7; margin-bottom: 15px; }
+.footer-section ul { list-style: none; padding: 0; }
+.footer-section ul li { margin-bottom: 15px; }
+.footer-section ul li a { color: #94a3b8; text-decoration: none; transition: 0.3s ease; display: flex; align-items: center; gap: 12px; font-weight: 500; }
+.footer-section ul li a:hover { color: var(--primary); transform: translateX(5px); }
+.footer-copy { text-align: center; padding: 25px; background: #020617; color: #64748b; font-size: 0.95em; font-weight: 500; }
+
+/* --- 12. GESTIÓN DE CUPONES Y PANELES ADMIN --- */
+.form-cupones { display: flex; gap: 20px; align-items: flex-end; flex-wrap: wrap; width: 100%; }
+.grupo-input { flex: 1; min-width: 180px; display: flex; flex-direction: column; }
+.grupo-input label { margin-bottom: 8px; font-weight: 700; color: var(--secondary); font-size: 0.9em; text-align: left; }
+.grupo-input input, .grupo-input select { width: 100%; padding: 12px 15px; border: 1px solid var(--border-color); border-radius: 10px; background: var(--bg-main); font-size: 1em; outline: none; transition: var(--transition-smooth); }
+.grupo-input input:focus, .grupo-input select:focus { border-color: var(--primary); background: white; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+.form-cupones .btn-nuevo { height: 48px; margin-bottom: 0; display: flex; align-items: center; justify-content: center; padding: 0 25px; }
+
+/* --- 13. PANEL DE PERFIL DE USUARIO Y TABLA OSCURA --- */
+.contenedor-perfil { max-width: 1400px; margin: 60px auto; padding: 0 40px; }
+.layout-perfil { display: grid; grid-template-columns: 320px 1fr; gap: 40px; }
+.tarjeta-perfil { background: var(--bg-card); padding: 30px; border-radius: 20px; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); height: fit-content; }
+
+/* Tabla de pedidos: Cabecera oscura, interior blanco */
+.tabla-pedidos { background-color: var(--bg-card) !important; border: 1px solid var(--border-color) !important; }
+.tabla-pedidos th { background-color: var(--secondary) !important; color: #ffffff !important; }
+.tabla-pedidos td { border-bottom: 1px solid var(--border-color) !important; }
+.tabla-pedidos tr:hover { background-color: var(--bg-main) !important; }
+
+/* Textos adaptados para fondo blanco */
+.tabla-pedidos td strong { color: var(--secondary) !important; font-weight: 800; font-size: 1.1em; } /* Pedido ID en negro */
+.texto-productos { font-size: 0.9em; max-width: 250px; line-height: 1.5; color: var(--text-muted) !important; } /* Productos en gris suave */
+.texto-fecha { font-weight: 600; font-size: 0.9em; color: var(--text-muted) !important; } /* Fecha en gris suave */
+.texto-total { text-align: right; font-weight: 800; font-size: 1.1em; color: var(--secondary) !important; } /* Dinero en negro */
+/* --- UTILIDADES EXTRA --- */
+.badge-admin { background: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; padding: 5px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8em; text-transform: uppercase; }
+.badge-cliente { background: #dcfce7; color: #166534; border: 1px solid #86efac; padding: 5px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8em; text-transform: uppercase; }
+.error-msg { background: #fee2e2; color: #dc2626; padding: 15px; border-radius: 12px; margin-bottom: 25px; font-weight: 600; border: 1px solid #fca5a5; }
+.success-msg { background: #dcfce7; color: #166534; padding: 15px; border-radius: 12px; margin-bottom: 25px; font-weight: 600; border: 1px solid #86efac; }
+
+/* ==========================================================================
+   RESPONSIVE DESIGN COMPLETO
+   ========================================================================== */
+
+/* RESPONSIVE TABLET (1024px) */
+@media (max-width: 1024px) {
+    .navbar { padding: 15px 25px; }
+    .menu-toggle { display: block; order: 3; flex: 0 0 auto; }
+    .nav-search-container { order: 2; margin: 0 20px; }
+    .search-form { max-width: 100%; }
+    
+    .nav-menu { display: none; width: 100%; order: 4; margin-top: 20px; }
+    .nav-menu.active { display: block; animation: fadeInMenu 0.3s ease; }
+    .nav-icons { flex-direction: column; width: 100%; gap: 10px; }
+    .nav-icons a { display: block; width: 100%; padding: 15px; background: #1e293b; border-radius: 10px; text-align: center; box-sizing: border-box; }
+    .nav-icons a.btn-registro { background: white !important; color: var(--secondary) !important; border-radius: 30px !important; margin-top: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); }
+    .hero-section { background: url('../img/imagen_fondo.jpeg') center/cover no-repeat; }
+    .layout-perfil { grid-template-columns: 1fr; }
+}
+
+/* RESPONSIVE MÓVIL PEQUEÑO (768px) */
+@media (max-width: 768px) {
+    .navbar { padding: 15px 20px; }
+    .menu-toggle { order: 2; }
+    .nav-search-container { order: 3; width: 100%; margin: 15px 0 0 0; }
+    .nav-menu { order: 4; margin-top: 15px; }
+    
+    .hero-content h1 { font-size: 2.5em; }
+    .titulo-seccion { font-size: 2.2em; }
+    .footer-container { padding: 50px 30px; }
+    
+    .admin-table, .tabla-admin, .tabla-carrito, .tabla-pedidos, 
+    .admin-table thead, .tabla-admin thead, .tabla-carrito thead, .tabla-pedidos thead, 
+    .admin-table tbody, .tabla-admin tbody, .tabla-carrito tbody, .tabla-pedidos tbody, 
+    .admin-table tr, .tabla-admin tr, .tabla-carrito tr, .tabla-pedidos tr, 
+    .admin-table td, .tabla-admin td, .tabla-carrito td, .tabla-pedidos td { display: block; width: 100%; box-sizing: border-box; }
+    
+    .admin-table thead, .tabla-admin thead, .tabla-carrito thead, .tabla-pedidos thead { display: none; }
+    
+    .admin-table tr, .tabla-admin tr, .tabla-carrito tr, .tabla-pedidos tr { margin-bottom: 20px; border: 1px solid var(--border-color); border-radius: 16px; padding: 15px; background: white; box-shadow: var(--shadow-sm); }
+    
+    .admin-table td, .tabla-admin td, .tabla-carrito td, .tabla-pedidos td { display: flex; justify-content: space-between; align-items: center; padding: 12px 5px; border-bottom: 1px solid var(--bg-main); text-align: right; }
+    
+    .admin-table td:last-child, .tabla-admin td:last-child, .tabla-carrito td:last-child, .tabla-pedidos td:last-child { border-bottom: none; justify-content: center; padding-top: 20px; gap: 10px; }
+    
+    .admin-table td::before, .tabla-admin td::before, .tabla-carrito td::before, .tabla-pedidos td::before { content: attr(data-label); font-weight: 800; color: var(--text-muted); font-size: 0.8em; text-transform: uppercase; text-align: left; }
+    
+    /* Para que las etiquetas en móvil se lean bien en la tabla oscura de pedidos */
+    .tabla-pedidos td::before { color: var(--text-muted) !important; }
+    .post-info { padding: 30px 25px; }
+    .post-titulo { font-size: 2.2em; }
+    .texto-articulo-blog, .post-contenido { font-size: 1.15rem; }
+    .post-fecha { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInMenu { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- ESTILOS PARA LOGIN Y REGISTRO --- */
+.nav-auth {
+    background: #0f172a;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.nav-auth a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+.auth-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.auth-box {
+    background: white;
+    width: 100%;
+    max-width: 420px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    text-align: center;
+}
+.auth-box h2 { margin-top: 0; color: #1e293b; font-size: 1.8em; }
+.auth-box p { color: #64748b; font-size: 0.95em; margin-bottom: 30px; }
+.input-group { text-align: left; margin-bottom: 20px; }
+.input-group label { display: block; margin-bottom: 8px; color: #475569; font-weight: 600; font-size: 0.9em; }
+.input-group input { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; font-size: 1em; transition: 0.2s; background: #f8f9fa; }
+.input-group input:focus { border-color: #2563eb; outline: none; background: white; box-shadow: 0 0 0 3px rgba(37,99,235,0.15); }
+.btn-submit { width: 100%; padding: 14px; background: #2563eb; color: white; border: none; border-radius: 8px; font-size: 1.05em; font-weight: bold; cursor: pointer; transition: 0.2s; }
+.btn-submit:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(37,99,235,0.2); }
+.auth-links { margin-top: 25px; font-size: 0.95em; color: #64748b; }
+.auth-links a { color: #2563eb; text-decoration: none; font-weight: bold; }
+.error-msg { background: #fee2e2; color: #dc2626; padding: 12px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9em; border: 1px solid #fca5a5; }
+.success-msg { background: #dcfce7; color: #166534; padding: 12px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9em; border: 1px solid #bbf7d0; }
